@@ -1,0 +1,14 @@
+D:\Users\Arturo\Desktop\GSBANK\obj\Debug\net7.0\GSBANK.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Arturo\Desktop\GSBANK\obj\Debug\net7.0\GSBANK.AssemblyInfoInputs.cache
+D:\Users\Arturo\Desktop\GSBANK\obj\Debug\net7.0\GSBANK.AssemblyInfo.cs
+D:\Users\Arturo\Desktop\GSBANK\obj\Debug\net7.0\GSBANK.csproj.CoreCompileInputs.cache
+D:\Users\Arturo\Desktop\GSBANK\bin\Debug\net7.0\GSBANK.exe
+D:\Users\Arturo\Desktop\GSBANK\bin\Debug\net7.0\GSBANK.deps.json
+D:\Users\Arturo\Desktop\GSBANK\bin\Debug\net7.0\GSBANK.runtimeconfig.json
+D:\Users\Arturo\Desktop\GSBANK\bin\Debug\net7.0\GSBANK.dll
+D:\Users\Arturo\Desktop\GSBANK\bin\Debug\net7.0\GSBANK.pdb
+D:\Users\Arturo\Desktop\GSBANK\obj\Debug\net7.0\GSBANK.dll
+D:\Users\Arturo\Desktop\GSBANK\obj\Debug\net7.0\refint\GSBANK.dll
+D:\Users\Arturo\Desktop\GSBANK\obj\Debug\net7.0\GSBANK.pdb
+D:\Users\Arturo\Desktop\GSBANK\obj\Debug\net7.0\GSBANK.genruntimeconfig.cache
+D:\Users\Arturo\Desktop\GSBANK\obj\Debug\net7.0\ref\GSBANK.dll
