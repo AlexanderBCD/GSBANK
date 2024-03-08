@@ -8,5 +8,6 @@ class Program
 
         Console.WriteLine("Anda bien lenta mi lentium");
         Console.WriteLine("HELLO WORD");
-    }
+        Console.Write("Hola como estas yo estoy muy bien xdxdxdxd probando si realiza los cambios")
+;    }
 }
