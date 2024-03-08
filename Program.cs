@@ -1,2 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿namespace GSBANK;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hola estoy probando los repositorios");
+
+        Console.WriteLine("Anda bien lenta mi lentium");
+    }
+}

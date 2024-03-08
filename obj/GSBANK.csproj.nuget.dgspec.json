@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luna\\Documents\\SEGUNDO CUATRIMESTRE\\POO\\ACTIVIDADES\\GSBANK\\GSBANK.csproj": {}
+    "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\GSBANK.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luna\\Documents\\SEGUNDO CUATRIMESTRE\\POO\\ACTIVIDADES\\GSBANK\\GSBANK.csproj": {
+    "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\GSBANK.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luna\\Documents\\SEGUNDO CUATRIMESTRE\\POO\\ACTIVIDADES\\GSBANK\\GSBANK.csproj",
+        "projectUniqueName": "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\GSBANK.csproj",
         "projectName": "GSBANK",
-        "projectPath": "C:\\Users\\Luna\\Documents\\SEGUNDO CUATRIMESTRE\\POO\\ACTIVIDADES\\GSBANK\\GSBANK.csproj",
+        "projectPath": "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\GSBANK.csproj",
         "packagesPath": "C:\\Users\\Luna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luna\\Documents\\SEGUNDO CUATRIMESTRE\\POO\\ACTIVIDADES\\GSBANK\\obj\\",
+        "outputPath": "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Luna\\AppData\\Roaming\\NuGet\\NuGet.Config"
