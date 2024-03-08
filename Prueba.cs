@@ -4,7 +4,7 @@ class Program
 {
     static void Main()
     {
-        Console.Write("Introduce el ángulo en grados: ");
+        Console.Write("Introduce el culángulo en grados: ");
         double grados;
 
         while (!double.TryParse(Console.ReadLine(), out grados))
