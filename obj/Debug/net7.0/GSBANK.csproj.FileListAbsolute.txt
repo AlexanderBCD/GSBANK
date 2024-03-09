@@ -12,3 +12,17 @@ D:\Users\Arturo\Desktop\GSBANK\obj\Debug\net7.0\refint\GSBANK.dll
 D:\Users\Arturo\Desktop\GSBANK\obj\Debug\net7.0\GSBANK.pdb
 D:\Users\Arturo\Desktop\GSBANK\obj\Debug\net7.0\GSBANK.genruntimeconfig.cache
 D:\Users\Arturo\Desktop\GSBANK\obj\Debug\net7.0\ref\GSBANK.dll
+C:\Users\Luna\Documents\GitHub\GSBANK\bin\Debug\net7.0\GSBANK.exe
+C:\Users\Luna\Documents\GitHub\GSBANK\bin\Debug\net7.0\GSBANK.deps.json
+C:\Users\Luna\Documents\GitHub\GSBANK\bin\Debug\net7.0\GSBANK.runtimeconfig.json
+C:\Users\Luna\Documents\GitHub\GSBANK\bin\Debug\net7.0\GSBANK.dll
+C:\Users\Luna\Documents\GitHub\GSBANK\bin\Debug\net7.0\GSBANK.pdb
+C:\Users\Luna\Documents\GitHub\GSBANK\obj\Debug\net7.0\GSBANK.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Luna\Documents\GitHub\GSBANK\obj\Debug\net7.0\GSBANK.AssemblyInfoInputs.cache
+C:\Users\Luna\Documents\GitHub\GSBANK\obj\Debug\net7.0\GSBANK.AssemblyInfo.cs
+C:\Users\Luna\Documents\GitHub\GSBANK\obj\Debug\net7.0\GSBANK.csproj.CoreCompileInputs.cache
+C:\Users\Luna\Documents\GitHub\GSBANK\obj\Debug\net7.0\GSBANK.dll
+C:\Users\Luna\Documents\GitHub\GSBANK\obj\Debug\net7.0\refint\GSBANK.dll
+C:\Users\Luna\Documents\GitHub\GSBANK\obj\Debug\net7.0\GSBANK.pdb
+C:\Users\Luna\Documents\GitHub\GSBANK\obj\Debug\net7.0\GSBANK.genruntimeconfig.cache
+C:\Users\Luna\Documents\GitHub\GSBANK\obj\Debug\net7.0\ref\GSBANK.dll
