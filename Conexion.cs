@@ -4,7 +4,13 @@ namespace GSBANK;
 
 public class ConexionBD
 {
+    //Conexion RafaPC [NO BORRAR]
     private string connectionString ="Server=DESKTOP-KEI8B51;Database=bancoDeSangre;Integrated Security=True;";
+    
+    
+    //Conexion Bolio [NO BORRAR]
+    //private string connectionString ="Server=LAPTOP-TQH24RE4;Database=bancoDeSangre;Integrated Security=True;";
+
 
     public SqlConnection conexion;
 
