@@ -10,8 +10,43 @@ class Program
         Console.InputEncoding = Encoding.UTF8;
         Console.OutputEncoding = Encoding.UTF8;
 
-        Eleccion menu = new Eleccion();
-        menu.MenuPrincipal();
+        var menu = new Menu();
+        while(true)
+        {
+            menu.MostrarMenuPrincipa();
+
+            string? input = Console.ReadLine();
+
+            switch(input)
+            {
+                case "1":
+
+                break;
+
+                case "2":
+
+                break;
+
+                case "3":
+
+                break;
+
+                case "4":
+
+                break;
+
+                case "5":
+
+                break;
+
+                default:
+
+                Console.WriteLine("\nRevisar las opciones dispobibles... \nLa opción que eligió es inexistente [ENTER]");
+                Console.ReadKey();
+            
+                break;
+            }
+        }
         
     }
 }
