@@ -1,48 +1,51 @@
+
+
 namespace GSBANK;
 
 class Eleccion
 {
-    public void Menu()
+    public void MenuPrincipal()
     {
-        
-        Console.WriteLine("Bienvenido al Sistema de resguardo de Sangre");
         while(true)
         {
-            Console.Clear();
-            Console.WriteLine("********Opciones disponibles********");
-            Console.WriteLine("1.- Usuarios registrados");
-            Console.WriteLine("2. Registro de nuevo usuario");
-            Console.WriteLine("3. Emparejamiento");
-            Console.WriteLine("4. Bajas de usuario");
-            Console.WriteLine("5. Salir del programa");
-            Console.Write("Introducir opcion: ");
-            int input = Convert.ToInt32(Console.ReadLine());
+            Console.Clear(); //LIMPIA CONSOLA OJO
+            Console.WriteLine("🩸 Bienvenido al Sistema de Resguardo de Sangre 🩸");
+
+            Console.WriteLine("\n******** Opciones Disponibles ********");
+            Console.WriteLine("1. 🧑‍🤝‍🧑 Usuarios Registrados");
+            Console.WriteLine("2. ➕ Registro de Nuevo Usuario");
+            Console.WriteLine("3. 💞 Emparejamiento");
+            Console.WriteLine("4. 🚫 Bajas de Usuario");
+            Console.WriteLine("5. 🚪 Salir del Programa");
+            Console.Write("--Introduce tu opción: 👉 ");
+            string? input = Console.ReadLine();
 
             switch(input)
             {
-                case 1:
+                case "1":
 
                 break;
 
-                case 2:
+                case "2":
 
                 break;
 
-                case 3:
+                case "3":
 
                 break;
 
-                case 4:
+                case "4":
 
                 break;
 
-                case 5:
+                case "5":
 
                 return;
 
                 default:
 
-                Console.WriteLine("Revisar las opciones dispobibles. La opción que eligió es inexistente");
+                Console.WriteLine("Revisar las opciones dispobibles...\n. La opción que eligió es inexistente [ENTER]");
+                Console.ReadKey();
             
                 break;
             }
