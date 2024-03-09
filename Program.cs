@@ -13,33 +13,33 @@ class Program
         var menu = new Menu();
         while(true)
         {
-            menu.MostrarMenuPrincipa();
+            menu.MostrarMenuPrincipa(); //Muestra todas las opciones en consola
 
             string? input = Console.ReadLine();
 
             switch(input)
             {
-                case "1":
+                case "1"://Usuarios Registrados
 
                 break;
 
-                case "2":
+                case "2"://Registro de Nuevo Usuario
 
                 break;
 
-                case "3":
+                case "3"://Emparejamiento
 
                 break;
 
-                case "4":
+                case "4"://Bajas de Usuario
 
                 break;
 
-                case "5":
+                case "5"://Salir del Programa
 
                 break;
 
-                default:
+                default://Otro
 
                 Console.WriteLine("\nRevisar las opciones dispobibles... \nLa opción que eligió es inexistente [ENTER]");
                 Console.ReadKey();
