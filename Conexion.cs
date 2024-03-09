@@ -9,7 +9,7 @@ public class ConexionBD
     
     
     //Conexion Bolio [NO BORRAR]
-    //private string connectionString ="Server=LAPTOP-TQH24RE4;Database=bancoDeSangre;Integrated Security=True;";
+    //private string connectionString ="Server=LAPTOP-TQH24RE4;Database=bancoDeSangre;Integrated Security=True;Encrpyt=False;";
 
 
     public SqlConnection conexion;
