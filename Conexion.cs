@@ -1,12 +1,10 @@
-using System;
 using Microsoft.Data.SqlClient;
-
 
 namespace GSBANK;
 
 public class ConexionBD
 {
-    private string connectionString ="Server=LAPTOP-TQH24RE4;Database=????;Integrated Security=True;Encrypt=False;";
+    private string connectionString ="Server=DESKTOP-KEI8B51;Database=bancoDeSangre;Integrated Security=True;";
 
     public SqlConnection conexion;
 
@@ -15,32 +13,22 @@ public class ConexionBD
         conexion = new SqlConnection(connectionString);
     }
 
-    public SqlConnection AbrirConexion()
+    public SqlConnection? AbrirConexion()
     {
         try
         {
             conexion.Open();
-            Console.WriteLine("Conexion establecida correctamente");
             return conexion;
         }
-        catch(FormatException)
+        catch (Exception ex)
         {
-            
-            Console.WriteLine("Error al extablecer la conexion");
-            throw;
+            Console.WriteLine($"Error al abrir la conexión: {ex.Message}");
+            return null;
         }
     }
 
-    public void CerrarConexion(SqlConnection conexion)
+    public void CerrarConexion()
     {
-        try
-        {
-            conexion.Close();
-            Console.WriteLine("Conexion cerrada exitosamente");
-        }
-        catch(FormatException)
-        {
-            Console.WriteLine("Error al cerrar conexion");
-        }
+        conexion.Close();
     }
 }
