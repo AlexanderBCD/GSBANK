@@ -1,16 +1,17 @@
-using Microsoft.Data.SqlClient;
+    using Microsoft.Data.SqlClient;
 
 namespace GSBANK;
 
 public class ConexionBD
 {
     //Conexion RafaPC [NO BORRAR]
-    private string connectionString ="Server=DESKTOP-KEI8B51;Database=bancoDeSangre;Integrated Security=True;";
-    
+    //private string connectionString ="Server=DESKTOP-KEI8B51;Database=bancoDeSangre;Integrated Security=True;";
     
     //Conexion Bolio [NO BORRAR]
     //private string connectionString ="Server=LAPTOP-TQH24RE4;Database=bancoDeSangre;Integrated Security=True;Encrpyt=False;";
 
+    //Conxion Arturo [no borrar]
+    private string connectionString ="Server=LAPTOP-R2D2;Database=bancoDeSangre;Integrated Security=True;";
 
     public SqlConnection conexion;
 
