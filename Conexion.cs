@@ -10,7 +10,7 @@ public class ConexionBD
     //Conexion RafaLAP [NO BORRAR]
     //private string connectionString ="Server=DESKTOP-3EG8250;Database=bancoDeSangre;Integrated Security=True;";
     
-    //Conexion Bolio [NO BORRAR]
+    //Conexion Bolio [BORRAR por favor :v]
     private string connectionString ="Server=LAPTOP-TQH24RE4;Database=bancoDeSangre;Integrated Security=True;Encrpyt=False;";
 
     //Conxion Arturo [BORRALO]
