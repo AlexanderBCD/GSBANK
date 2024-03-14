@@ -13,6 +13,6 @@ class Menu
         Console.WriteLine("3. 💞 Emparejamiento");
         Console.WriteLine("4. 🚫 Bajas de Usuario");
         Console.WriteLine("5. 🚪 Salir del Programa");
-        Console.Write("\n--Introduce tu opción 👉 ");
+        Console.Write("\n--Introduce tu opción 👉: ");
     }
 }

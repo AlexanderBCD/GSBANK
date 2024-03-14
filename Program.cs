@@ -37,7 +37,7 @@ class Program
 
                 case "5"://Salir del Programa
 
-                break;
+                return;
 
                 default://Otro
 
