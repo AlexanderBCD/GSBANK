@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\solis\\Downloads\\Repositorios\\GSBANK\\GSBANK.csproj": {}
+    "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\GSBANK.csproj": {}
   },
   "projects": {
-    "C:\\Users\\solis\\Downloads\\Repositorios\\GSBANK\\GSBANK.csproj": {
+    "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\GSBANK.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\solis\\Downloads\\Repositorios\\GSBANK\\GSBANK.csproj",
+        "projectUniqueName": "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\GSBANK.csproj",
         "projectName": "GSBANK",
-        "projectPath": "C:\\Users\\solis\\Downloads\\Repositorios\\GSBANK\\GSBANK.csproj",
-        "packagesPath": "C:\\Users\\solis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\solis\\Downloads\\Repositorios\\GSBANK\\obj\\",
+        "projectPath": "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\GSBANK.csproj",
+        "packagesPath": "C:\\Users\\Luna\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\solis\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Luna\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -32,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -59,30 +54,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.16, 7.0.16]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[7.0.16, 7.0.16]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.16, 7.0.16]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[7.0.16, 7.0.16]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
