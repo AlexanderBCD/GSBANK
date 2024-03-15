@@ -4,42 +4,35 @@ class Emparejamiento
 {
     public void Compatibles()
     {
-        int id;
         bool estado = false;
-        
-
         while(!estado){
             
             Console.WriteLine("Sistema de emparejamiento para donaciones de sangre");
-            Console.Write("Ingresar el [id] del paciente");
+            Console.Write("Ingresar los nombres: ");
             string? input = Console.ReadLine();
 
-            if(int.TryParse(input, out  id))
-            {
-                estado = true;
-            }
-            else
-            {
-                Console.WriteLine("Dato erroneo, favor de ingresar un dato valido");
-            }
+            Console.Write("Ingrese Apellido Paterno: ");
+            string? input2 = Console.ReadLine();
+
+            Console.Write("Ingrese Apellido Materno: ");
+            string? input3 = Console.ReadLine();
+
 
             HelperEmparejamiento help = new HelperEmparejamiento();
-            string[]? resultado = help.ConsultarId(id);
+            string[]? resultado = help.ConsultarId(input, input2,input3);
 
             if(resultado != null)
             {
+                estado = true;
                 string port1 = resultado[0];
                 string port2 = resultado[1];
-                string port3 = resultado[2];
+                
+                Console.WriteLine($"Tipo de sangre: {port1} {port2} ");
 
-                Console.WriteLine($"Usuario: {port1} {port2} {port3}");
+                Console.WriteLine("Donantes compatibles: ");
 
                 Console.ReadKey();
             }
-
-            Console.WriteLine("Donantes compatibles: ");
-
-            
         }
         
     }

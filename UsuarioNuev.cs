@@ -1,23 +1,29 @@
 using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 namespace GSBANK
 {
     class UsuariosNuev
     {
-        private ConexionBD conexionBD;
+        string connectionString = "Server=LAPTOP-TQH24RE4;Database=bancoDeSangre;Integrated Security=True;Encrypt=False;";
 
-        public UsuariosNuev()
+       public void ConectarABaseDeDatos()
         {
-            conexionBD = new ConexionBD();
-        }
 
-       // public void ConectarABaseDeDatos()
-       // {
-       //     using (SqlConnection connection = conexionBD.AbrirConexion())
-       //     {
-       //         // COMO COÑO ME COECTO A LA BASE DE DATOOOOS PARA REALIZAR MIS PROCESOS AAAAAAA
-       //     }
-       // }
-    }
+            string query =""; //CADENA DE CONSULTA DEPENDE LO QUE NECESITES HACER
+
+
+           using (SqlConnection connection = new SqlConnection(connectionString))
+           {
+
+              using (SqlCommand command = new SqlCommand(query,connection))
+              {
+                    //LOGICA DE PROGRAMACION
+              }
+           }
+
+           
+        }
+  }
 }
 

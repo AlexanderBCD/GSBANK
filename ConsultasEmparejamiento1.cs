@@ -7,26 +7,27 @@ class HelperEmparejamiento{
 
     string connectionString = "Server=LAPTOP-TQH24RE4;Database=bancoDeSangre;Integrated Security=True;Encrypt=False;";
 
-    public string[]? ConsultarId(int id)
+    public string[]? ConsultarId(string? input, string? input2, string? input3)
     {
-        string query ="SELECT nombres,apellidoPaterno,apellidoMaterno FROM usuarios WHERE id = @id";
+        string query ="SELECT grupoSanguineo,rh FROM usuarios WHERE nombres = @input AND apellidoPaterno = @input2 AND apellidoMaterno = @input3";
     
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             using (SqlCommand command = new SqlCommand(query,connection))
             {
-                command.Parameters.AddWithValue("@id",id);
+                command.Parameters.AddWithValue("@input",input);
+                command.Parameters.AddWithValue("@input2",input2);
+                command.Parameters.AddWithValue("@input3",input3);
                 connection.Open();
 
                 using(SqlDataReader reader = command.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        string nombres =reader.GetString(0);
-                        string apellidoPaterno = reader.GetString(1);
-                        string apellidoMaterno = reader.GetString(2);
+                        string TipodeSangre =reader.GetString(0);
+                        string Rh = reader.GetString(1);
 
-                        return new string[] {nombres, apellidoPaterno, apellidoMaterno};
+                        return new string[] {TipodeSangre,Rh};
                     }
                     else
                     {
@@ -36,5 +37,17 @@ class HelperEmparejamiento{
             }
         }
     
+    }
+
+    public void PersonasCompatibles()
+    {
+        string query ="";
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            using (SqlCommand command = new SqlCommand(query,connection))
+            {
+
+            }
+        }
     }
 }
