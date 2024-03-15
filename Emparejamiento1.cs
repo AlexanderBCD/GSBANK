@@ -11,7 +11,7 @@ class Emparejamiento
         while(!estado){
             
             Console.WriteLine("Sistema de emparejamiento para donaciones de sangre");
-            Console.WriteLine("Ingresar el [id] del paciente");
+            Console.Write("Ingresar el [id] del paciente");
             string? input = Console.ReadLine();
 
             if(int.TryParse(input, out  id))
@@ -33,6 +33,8 @@ class Emparejamiento
                 string port3 = resultado[2];
 
                 Console.WriteLine($"Usuario: {port1} {port2} {port3}");
+
+                Console.ReadKey();
             }
         }
         
