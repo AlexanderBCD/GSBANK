@@ -29,6 +29,9 @@ class Program
 
                 case "3"://Emparejamiento
 
+                    Emparejamiento emp = new Emparejamiento();
+                    emp.Compatibles();
+
                 break;
 
                 case "4"://Bajas de Usuario
