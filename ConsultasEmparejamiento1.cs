@@ -43,14 +43,19 @@ class HelperEmparejamiento{
     {
         string query;
 
-        if(port1 == "A")
+        if(port1 == "A" && port2 =="+")
         {
-            query = "SELECT * FROM usuarios WHERE tipoDeSangre IN ('O','A') ";
+            query = "SELECT * FROM usuarios WHERE grupoSanguineo IN ('O','A') ";
             
         }
         else if(port1 == "AB")
         {
             query ="SELECT * FROM usuarios";
+        }
+        else if(port1 == "A" && port2 =="-")
+        {
+            query = "SELECT * FROM usuarios WHERE grupoSanguineo IN ('O','A') AND rh=@port2 ";
+
         }
         else
         {
@@ -62,6 +67,7 @@ class HelperEmparejamiento{
         {
             using (SqlCommand command = new SqlCommand(query,connection))
             {
+                command.Parameters.AddWithValue("@port2",port2);
                 connection.Open();
 
                 using (SqlDataReader reader = command.ExecuteReader())
