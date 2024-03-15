@@ -36,6 +36,10 @@ class Emparejamiento
 
                 Console.ReadKey();
             }
+
+            Console.WriteLine("Donantes compatibles: ");
+
+            
         }
         
     }

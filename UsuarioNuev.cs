@@ -11,13 +11,13 @@ namespace GSBANK
             conexionBD = new ConexionBD();
         }
 
-        public void ConectarABaseDeDatos()
-        {
-            using (SqlConnection connection = conexionBD.AbrirConexion())
-            {
-                // COMO COÑO ME COECTO A LA BASE DE DATOOOOS PARA REALIZAR MIS PROCESOS AAAAAAA
-            }
-        }
+       // public void ConectarABaseDeDatos()
+       // {
+       //     using (SqlConnection connection = conexionBD.AbrirConexion())
+       //     {
+       //         // COMO COÑO ME COECTO A LA BASE DE DATOOOOS PARA REALIZAR MIS PROCESOS AAAAAAA
+       //     }
+       // }
     }
 }
 
