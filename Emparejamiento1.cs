@@ -31,6 +31,9 @@ class Emparejamiento
 
                 Console.WriteLine("Donantes compatibles: ");
 
+                help.PersonasCompatibles(port1,port2);
+                
+
                 Console.ReadKey();
             }
         }

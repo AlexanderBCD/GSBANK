@@ -39,14 +39,40 @@ class HelperEmparejamiento{
     
     }
 
-    public void PersonasCompatibles()
+    public void PersonasCompatibles(string port1, string port2)
     {
-        string query ="";
+        string query;
+
+        if(port1 == "A")
+        {
+            query = "SELECT * FROM usuarios WHERE tipoDeSangre IN ('O','A') ";
+            
+        }
+        else if(port1 == "AB")
+        {
+            query ="SELECT * FROM usuarios";
+        }
+        else
+        {
+            query ="Nothing";
+        }
+
+        
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             using (SqlCommand command = new SqlCommand(query,connection))
             {
+                connection.Open();
 
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while(reader.Read())
+                    {
+                        Console.WriteLine($"ID: {reader["id"]}  NOMBRE: {reader["nombres"]}  {reader["apellidoPaterno"]}  {reader["apellidoMaterno"]}");
+                    }
+
+                    Console.ReadKey();
+                }
             }
         }
     }
