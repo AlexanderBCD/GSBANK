@@ -39,7 +39,7 @@ class HelperEmparejamiento{
     
     }
 
-    public void PersonasCompatibles(string port1, string port2)
+    public void PersonasCompatibles(string port1, string port2, string? input, string? input2)
     {
         string query;
 
@@ -50,7 +50,7 @@ class HelperEmparejamiento{
         }
         else if(port1 == "AB")
         {
-            query ="SELECT * FROM usuarios";
+            query ="SELECT * FROM usuarios WHERE nombres !=@input AND apellidoPaterno !=@input2";
         }
         else if(port1 == "A" && port2 =="-")
         {
@@ -67,6 +67,8 @@ class HelperEmparejamiento{
         {
             using (SqlCommand command = new SqlCommand(query,connection))
             {
+                command.Parameters.AddWithValue("@input",input);
+                command.Parameters.AddWithValue("@input2",input2);
                 command.Parameters.AddWithValue("@port2",port2);
                 connection.Open();
 
