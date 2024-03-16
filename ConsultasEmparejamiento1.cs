@@ -43,19 +43,39 @@ class HelperEmparejamiento{
     {
         string query;
 
-        if(port1 == "A" && port2 =="+")
+        if(port1 == "A" && port2 =="+")//A+
         {
-            query = "SELECT * FROM usuarios WHERE grupoSanguineo IN ('O','A') ";
+            query = "SELECT * FROM usuarios WHERE grupoSanguineo IN ('O','A') AND nombres !=@input AND apellidoPaterno !=@input2";
             
         }
-        else if(port1 == "AB")
+        else if(port1 == "AB" && port2 == "+")//AB+
         {
             query ="SELECT * FROM usuarios WHERE nombres !=@input AND apellidoPaterno !=@input2";
         }
-        else if(port1 == "A" && port2 =="-")
+        else if(port1 == "A" && port2 =="-")//A-
         {
-            query = "SELECT * FROM usuarios WHERE grupoSanguineo IN ('O','A') AND rh=@port2 ";
+            query = "SELECT * FROM usuarios WHERE grupoSanguineo IN ('O','A') AND rh=@port2 AND nombres !=@input AND apellidoPaterno !=@input2";
 
+        }
+        else if(port1 =="AB" && port2 =="-")//AB-
+        {
+            query ="SELECT * FROM usuarios WHERE grupoSanguineo IN ('O','A','B','AB') AND rh=@port2 AND nombres !=@input AND apellidoPaterno !=input2";
+        }
+        else if(port1 == "O" && port2 =="+")//O+
+        {
+            query ="SELECT * FROM usuarios WHERE grupoSanguineo IN ('O') AND nombres !=@input AND apellidoPaterno !=@input2";
+        }
+        else if(port1 == "O" && port2 == "-")//O-
+        {
+            query = "SELECT * FROM usuarios WHERE grupoSanguineo IN ('O') AND rh=@port2 AND nombres !=@input AND apellidoPaterno !=@input2";
+        }
+        else if(port1 =="B" && port2 =="+")//B+
+        {
+            query ="SELECT * FROM usuarios WHERE grupoSanguineo IN ('B','O') AND nombres !=@input AND apellidoPaterno !=@input2";
+        }
+        else if(port1 =="B" && port2 =="-")//B-
+        {
+            query ="SELECT * FROM usuarios WHERE grupoSanguineo IN ('B','O') AND rh=@port2 AND nombres !=@input AND apellidoPaterno !=@input2";
         }
         else
         {
