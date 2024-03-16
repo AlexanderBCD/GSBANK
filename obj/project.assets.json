@@ -2009,19 +2009,19 @@
     ]
   },
   "packageFolders": {
-    "/home/alexanderbolio/.nuget/packages/": {}
+    "C:\\Users\\Luna\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/alexanderbolio/Documentos/GitHub/GSBANK/GSBANK.csproj",
+      "projectUniqueName": "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\GSBANK.csproj",
       "projectName": "GSBANK",
-      "projectPath": "/home/alexanderbolio/Documentos/GitHub/GSBANK/GSBANK.csproj",
-      "packagesPath": "/home/alexanderbolio/.nuget/packages/",
-      "outputPath": "/home/alexanderbolio/Documentos/GitHub/GSBANK/obj/",
+      "projectPath": "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\GSBANK.csproj",
+      "packagesPath": "C:\\Users\\Luna\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/alexanderbolio/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Luna\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -2061,26 +2061,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.16, 7.0.16]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.linux-x64",
-            "version": "[7.0.16, 7.0.16]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[7.0.16, 7.0.16]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
