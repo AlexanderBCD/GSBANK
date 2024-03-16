@@ -5,8 +5,10 @@ namespace GSBANK;
 
 public class ConexionBD
 {
+
     //Conexion RafaPC [NO BORRAR]
-    //private string connectionString ="Server=DESKTOP-KEI8B51;Database=bancoDeSangre;Integrated Security=True;";
+    //private string connectionString = "Server=DESKTOP-KEI8B51;Database=bancoDeSangre;Integrated Security=True;TrustServerCertificate=True;";
+
     
     //Conexion RafaLAP [NO BORRAR]
     //private string connectionString ="Server=DESKTOP-3EG8250;Database=bancoDeSangre;Integrated Security=True;";

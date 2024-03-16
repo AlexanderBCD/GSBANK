@@ -2,7 +2,7 @@ namespace GSBANK;
 
 class Menu
 {
-    public void MostrarMenuPrincipa()
+    public static void MostrarMenuPrincipa()
     {
         Console.Clear(); //LIMPIA CONSOLA OJO
         Console.WriteLine("🩸 Bienvenido al Sistema de Resguardo de Sangre 🩸");

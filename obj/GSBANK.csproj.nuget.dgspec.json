@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\GSBANK.csproj": {}
+    "C:\\Users\\solis\\Downloads\\REPOSITORIOS\\GSBANK\\GSBANK.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\GSBANK.csproj": {
+    "C:\\Users\\solis\\Downloads\\REPOSITORIOS\\GSBANK\\GSBANK.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\GSBANK.csproj",
+        "projectUniqueName": "C:\\Users\\solis\\Downloads\\REPOSITORIOS\\GSBANK\\GSBANK.csproj",
         "projectName": "GSBANK",
-        "projectPath": "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\GSBANK.csproj",
-        "packagesPath": "C:\\Users\\Luna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luna\\Documents\\GitHub\\GSBANK\\obj\\",
+        "projectPath": "C:\\Users\\solis\\Downloads\\REPOSITORIOS\\GSBANK\\GSBANK.csproj",
+        "packagesPath": "C:\\Users\\solis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\solis\\Downloads\\REPOSITORIOS\\GSBANK\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Luna\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\solis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -59,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
