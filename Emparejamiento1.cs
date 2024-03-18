@@ -6,7 +6,7 @@ class Emparejamiento
     {
         bool estado = false;
         while(!estado){
-            
+            Console.Clear();
             Console.WriteLine("Sistema de emparejamiento para donaciones de sangre");
             Console.Write("Ingresar los nombres: ");
             string? input = Console.ReadLine();
@@ -34,6 +34,12 @@ class Emparejamiento
                 help.PersonasCompatibles(port1,port2,input,input2);
                 
 
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Datos erroneos o el usuario no se encuentra en la base de datos");
                 Console.ReadKey();
             }
         }

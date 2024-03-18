@@ -1,49 +1,56 @@
 using System;
 using Microsoft.Data.SqlClient;
 
-namespace GSBANK;
-
-class HelperEmparejamiento{
-
-    string connectionString = "Server=LAPTOP-TQH24RE4;Database=bancoDeSangre;Integrated Security=True;Encrypt=False;";
-
-    public string[]? ConsultarId(string? input, string? input2, string? input3)
+namespace GSBANK
+{
+    class HelperEmparejamiento
     {
-        string query ="SELECT grupoSanguineo,rh FROM usuarios WHERE nombres = @input AND apellidoPaterno = @input2 AND apellidoMaterno = @input3";
-    
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        ConexionBD conexionBD = new ConexionBD(); // Instancia de la clase de conexión
+
+        public string[]? ConsultarId(string? input, string? input2, string? input3)
         {
-            using (SqlCommand command = new SqlCommand(query,connection))
+            string query = "SELECT grupoSanguineo, rh FROM usuarios WHERE nombres = @input AND apellidoPaterno = @input2 AND apellidoMaterno = @input3";
+
+            try
             {
-                command.Parameters.AddWithValue("@input",input);
-                command.Parameters.AddWithValue("@input2",input2);
-                command.Parameters.AddWithValue("@input3",input3);
-                connection.Open();
-
-                using(SqlDataReader reader = command.ExecuteReader())
+                using (SqlCommand command = new SqlCommand(query, conexionBD.AbrirConexion()))
                 {
-                    if (reader.Read())
-                    {
-                        string TipodeSangre =reader.GetString(0);
-                        string Rh = reader.GetString(1);
+                    command.Parameters.AddWithValue("@input", input);
+                    command.Parameters.AddWithValue("@input2", input2);
+                    command.Parameters.AddWithValue("@input3", input3);
 
-                        return new string[] {TipodeSangre,Rh};
-                    }
-                    else
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        return null;
+                        if (reader.Read())
+                        {
+                            string TipodeSangre = reader.GetString(0);
+                            string Rh = reader.GetString(1);
+
+                            return new string[] { TipodeSangre, Rh };
+                        }
+                        else
+                        {
+                            return null;
+                        }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error en Consultar: {ex.Message}");
+                return null;
+            }
+            finally
+            {
+                conexionBD.CerrarConexion();
+            }
         }
-    
-    }
 
-    public void PersonasCompatibles(string port1, string port2, string? input, string? input2)
-    {
-        string query;
+        public void PersonasCompatibles(string port1, string port2, string? input, string? input2)
+        {
+            string query;
 
-        if(port1 == "A" && port2 =="+")//A+
+            if(port1 == "A" && port2 =="+")//A+
         {
             query = "SELECT * FROM usuarios WHERE grupoSanguineo IN ('O','A') AND nombres !=@input AND apellidoPaterno !=@input2";
             
@@ -82,25 +89,30 @@ class HelperEmparejamiento{
             query ="Nothing";
         }
 
-        
-        using (SqlConnection connection = new SqlConnection(connectionString))
-        {
-            using (SqlCommand command = new SqlCommand(query,connection))
+            try
             {
-                command.Parameters.AddWithValue("@input",input);
-                command.Parameters.AddWithValue("@input2",input2);
-                command.Parameters.AddWithValue("@port2",port2);
-                connection.Open();
-
-                using (SqlDataReader reader = command.ExecuteReader())
+                using (SqlCommand command = new SqlCommand(query, conexionBD.AbrirConexion()))
                 {
-                    while(reader.Read())
-                    {
-                        Console.WriteLine($"ID: {reader["id"]}  NOMBRE: {reader["nombres"]}  {reader["apellidoPaterno"]}  {reader["apellidoMaterno"]}");
-                    }
+                    command.Parameters.AddWithValue("@input", input);
+                    command.Parameters.AddWithValue("@input2", input2);
+                    command.Parameters.AddWithValue("@port2", port2);
 
-                    Console.ReadKey();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Console.WriteLine($"ID: {reader["id"]}  NOMBRE: {reader["nombres"]}  {reader["apellidoPaterno"]}  {reader["apellidoMaterno"]}");
+                        }
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error en PersonasCompatibles: {ex.Message}");
+            }
+            finally
+            {
+                conexionBD.CerrarConexion();
             }
         }
     }
