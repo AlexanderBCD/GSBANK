@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace GSBANK;
 
 class Emparejamiento
@@ -5,17 +7,35 @@ class Emparejamiento
     public void Compatibles()
     {
         bool estado = false;
+        string? input ="";
+        string? input2 ="";
+        string? input3 ="";
         while(!estado){
             Console.Clear();
             Console.WriteLine("Sistema de emparejamiento para donaciones de sangre");
-            Console.Write("Ingresar los nombres: ");
-            string? input = Console.ReadLine();
+            do
+            {
+                Console.Clear();
+                Console.Write("Ingresar los nombres: ");
+                input = Console.ReadLine() ?? string.Empty;
+            }
+            while(!TextoCorrecto(input));
+            
+            do
+            {
+                Console.Clear();
+                Console.Write("Ingrese Apellido Paterno: ");
+                input2 = Console.ReadLine() ??  string.Empty;
+            }
+            while(!TextoCorrecto(input2));
 
-            Console.Write("Ingrese Apellido Paterno: ");
-            string? input2 = Console.ReadLine();
-
-            Console.Write("Ingrese Apellido Materno: ");
-            string? input3 = Console.ReadLine();
+            do
+            {
+                Console.Clear();
+                Console.Write("Ingrese Apellido Materno: ");
+                input3 = Console.ReadLine() ?? string.Empty;
+            }
+            while(!TextoCorrecto(input3));
 
 
             HelperEmparejamiento help = new HelperEmparejamiento();
@@ -45,4 +65,10 @@ class Emparejamiento
         }
         
     }
+     static bool TextoCorrecto(string texto){
+
+        Regex regex = new Regex(@"^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$");
+        return regex.IsMatch(texto);
+
+     }
 }
