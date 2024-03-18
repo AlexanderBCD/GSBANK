@@ -24,7 +24,9 @@ class Program
                 break;
 
                 case "2"://Registro de Nuevo Usuario
-
+                
+                    UsuariosNuev usuariosNuev = new UsuariosNuev();
+                    usuariosNuev.RegistrarNuevoUsuario("", "", "", "", "", "");
                 break;
 
                 case "3"://Emparejamiento

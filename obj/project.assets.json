@@ -2009,26 +2009,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\solis\\.nuget\\packages\\": {}
+    "C:\\Users\\Arturo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\solis\\Downloads\\REPOSITORIOS\\GSBANK\\GSBANK.csproj",
+      "projectUniqueName": "D:\\Users\\Arturo\\Desktop\\GSBANK\\GSBANK.csproj",
       "projectName": "GSBANK",
-      "projectPath": "c:\\Users\\solis\\Downloads\\REPOSITORIOS\\GSBANK\\GSBANK.csproj",
-      "packagesPath": "C:\\Users\\solis\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\solis\\Downloads\\REPOSITORIOS\\GSBANK\\obj\\",
+      "projectPath": "D:\\Users\\Arturo\\Desktop\\GSBANK\\GSBANK.csproj",
+      "packagesPath": "C:\\Users\\Arturo\\.nuget\\packages\\",
+      "outputPath": "D:\\Users\\Arturo\\Desktop\\GSBANK\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\solis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Arturo\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2041,11 +2039,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2073,7 +2066,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
