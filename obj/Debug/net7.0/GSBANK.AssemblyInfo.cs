@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GSBANK")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ddea38090d11ab23d9921f36a5e576424d08119")]
 [assembly: System.Reflection.AssemblyProductAttribute("GSBANK")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GSBANK")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

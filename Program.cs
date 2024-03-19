@@ -13,6 +13,7 @@ class Program
 
         while(true)
         {
+            Menu.header();
             Menu.MostrarMenuPrincipa(); //Muestra todas las opciones en consola
 
             string? input = Console.ReadLine();
@@ -37,7 +38,7 @@ class Program
                 break;
 
                 case "4"://Bajas de Usuario
-
+                    BajasUsuarios.MenuUsuarios();
                 break;
 
                 case "5"://Salir del Programa
