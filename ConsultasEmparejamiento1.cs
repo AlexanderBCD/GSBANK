@@ -101,7 +101,7 @@ namespace GSBANK
                     {
                         while (reader.Read())
                         {
-                            Console.WriteLine($"ID: {reader["id"]}  NOMBRE: {reader["nombres"]}  {reader["apellidoPaterno"]}  {reader["apellidoMaterno"]}");
+                            Console.WriteLine($"ID: {reader["id"]}  NOMBRE: {reader["nombres"]}  {reader["apellidoPaterno"]}  {reader["apellidoMaterno"]}  {reader["grupoSanguineo"]}{reader["rh"]}");
                         }
                     }
                 }
