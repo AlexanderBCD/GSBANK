@@ -30,16 +30,195 @@ class BajasUsuarios
                 break;
 
                 case "3":
+                ActivarUsuarioBaja();
                 break;
 
                 case "4":
-                break;
+                return;
 
                 default:
+                    Console.WriteLine("\n🚫 Opción no encontrada. [ENTER]🚫\n");
+                    Console.ReadKey();
                 break;
             }
         }
     }
+
+    public static void  ActivarUsuarioBaja()
+    {
+        ConexionBD conexionBD = new ConexionBD();
+        string? valorDeBusqueda;
+        while (true)
+        {
+            Menu.header();
+            Console.WriteLine("Por favor ingrese el nombre completo del usuario que desea volver a activar. [* Para salir.]... \n[Si el nombre lleva acentos, por favor colocarlos.]");
+            Console.Write("\n-- 👉: ");
+            valorDeBusqueda = Console.ReadLine();
+            if (valorDeBusqueda == "*")
+            {
+                return;
+            }
+
+            
+            try
+            {
+                string Query5 = $"SELECT * FROM UsuariosBajas WHERE {UsuariosRegistrados.DescomponerNombre(valorDeBusqueda)}";
+                var cmd5 = new SqlCommand(Query5, conexionBD.AbrirConexion());
+
+                using SqlDataReader lector = cmd5.ExecuteReader();
+                if (lector.HasRows)
+                {
+                    
+                    Console.WriteLine($"\nNombre completo \t\t\tNumero de telefono \tGrupo Sanguineo y RH\t Motivo de baja\n");
+                    while (lector.Read())
+                    {
+                        Console.WriteLine($"{lector["nombres"]} {lector["apellidoPaterno"]} {lector["apellidoMaterno"]} \t\t {lector["numeroTelefonico"]}\t\t{lector["grupoSanguineo"]}{lector["rh"]}\t\t{lector["motivo"]}");
+                        
+                    }
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine($"Este usuario no está dado de baja o no existe en el sistema [ENTER]");
+                    Console.ReadKey();
+                    
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                Console.ReadKey();
+            }
+            finally
+            {
+                conexionBD.CerrarConexion();
+            }
+        }
+        Console.WriteLine($"\n¿Está seguro de querer volver a activar este usuario? \nEsta acción requiere dos confirmaciones debido a que los datos son sensibles y no se admiten errores al realizar esta acción.");
+        Console.Write("\n-- 1[Confirmar] // 2 [Cancelar]\n-- 👉: ");
+        while (true)
+        {
+            string? input = Console.ReadLine();
+            if (input == "2" )
+            {
+                Console.WriteLine("Ha cancelado la operación. [ENTER]");
+                Console.ReadKey();
+                return;
+            }
+            else if (input != "1")
+            {
+                Console.WriteLine("Ingrese una opción.");
+                Console.Write("\n-- 👉: ");
+            }
+            else{break;}
+        }
+
+
+        Menu.header();
+        Console.WriteLine("Segunda confirmación...");
+        Console.WriteLine($"\n¿Está seguro de querer volver a activar este usuario? [{valorDeBusqueda}]");
+        Console.Write("\n-- 1[Confirmar] // 2[Cancelar]\n-- 👉: ");
+        while (true)
+        {
+            string? input = Console.ReadLine();
+            if (input == "2" )
+            {
+                Console.WriteLine("Ha cancelado la operación. [ENTER]");
+                Console.ReadKey();
+                return;
+            }
+            else if (input != "1")
+            {
+                Console.WriteLine("Ingrese una opción.");
+                Console.Write("\n-- 👉: ");
+            }
+            else{break;}
+
+        }
+
+        string? id = "";
+        string? nombres = "";
+        string? apellidoPaterno = "";
+        string? apellidoMaterno = "";
+        string? numeroTelefonico = "";
+        string? direccion = "";
+        string? grupoSanguineo = "";
+        string? rh = "";
+
+        try
+        {
+            string Query5 = $"SELECT * FROM UsuariosBajas WHERE {UsuariosRegistrados.DescomponerNombre(valorDeBusqueda)}";
+            var cmd5 = new SqlCommand(Query5, conexionBD.AbrirConexion());
+
+            using SqlDataReader lector = cmd5.ExecuteReader();
+
+            while (lector.Read())
+            {
+                id = lector["id"].ToString();
+                nombres = lector["nombres"].ToString();
+                apellidoPaterno = lector["apellidoPaterno"].ToString();
+                apellidoMaterno = lector["apellidoMaterno"].ToString();
+                numeroTelefonico = lector["numeroTelefonico"].ToString();
+                direccion = lector["direccion"].ToString();
+                grupoSanguineo = lector["grupoSanguineo"].ToString();
+                rh = lector["rh"].ToString();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            Console.ReadKey();
+        }
+        finally
+        {
+            conexionBD.CerrarConexion();
+        }
+
+        // Meter a la segunda tabla
+        try
+        {  
+            string Query3 = $"INSERT INTO usuarios (nombres,apellidoPaterno,apellidoMaterno,numeroTelefonico,direccion,grupoSanguineo,rh) VALUES ('{nombres}','{apellidoPaterno}','{apellidoMaterno}','{numeroTelefonico}','{direccion}','{grupoSanguineo}','{rh}')";
+            var cmd3 = new SqlCommand(Query3, conexionBD.AbrirConexion());
+            cmd3.ExecuteNonQuery();
+
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            Console.ReadKey();
+        }
+        finally
+        {
+            conexionBD.CerrarConexion();
+        }
+
+        try// Eliminar de la tabla principal
+        {
+            string Query2 = $"DELETE FROM UsuariosBajas WHERE id = {id}";
+            var cmd2 = new SqlCommand(Query2, conexionBD.AbrirConexion());
+            cmd2.ExecuteNonQuery();
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            Console.ReadKey();
+        }
+        finally
+        {
+            conexionBD.CerrarConexion();
+        }
+
+
+
+        Menu.header();
+        Console.WriteLine($"El usuario de nombre: {valorDeBusqueda} se volvió a dar de alta exitosamente. [ENTER]");
+        Console.ReadKey();
+
+    }
+
     public static void  VerUsuariosBaja()
     {
         Menu.header();
@@ -57,7 +236,7 @@ class BajasUsuarios
                 Console.WriteLine($"\nNombre completo \t\t\tNumero de telefono \tGrupo Sanguineo y RH\t Motivo de baja\n");
                 while (lector.Read())
                 {
-                    Console.WriteLine($"{lector["nombres"]} {lector["apellidoPaterno"]} {lector["apellidoMaterno"]} \t {lector["numeroTelefonico"]}\t\t{lector["grupoSanguineo"]}{lector["rh"]}\t\t{lector["motivo"]}");
+                    Console.WriteLine($"{lector["nombres"]} {lector["apellidoPaterno"]} {lector["apellidoMaterno"]} \t\t {lector["numeroTelefonico"]}\t\t{lector["grupoSanguineo"]}{lector["rh"]}\t\t{lector["motivo"]}");
     
                 }
             }
@@ -65,6 +244,7 @@ class BajasUsuarios
         catch (Exception ex)
         {
             Console.WriteLine($"Error: {ex.Message}");
+            Console.ReadKey();
         }
         finally
         {
@@ -167,6 +347,7 @@ class BajasUsuarios
                     catch (Exception ex)
                     {
                         Console.WriteLine($"Error: {ex.Message}");
+                        Console.ReadKey();
                     }
                     finally
                     {
@@ -183,6 +364,7 @@ class BajasUsuarios
                     catch (Exception ex)
                     {
                         Console.WriteLine($"Error: {ex.Message}");
+                        Console.ReadKey();
                     }
                     finally
                     {
