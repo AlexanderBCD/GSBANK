@@ -59,7 +59,7 @@ class UsuariosRegistrados
                     condition = true;
                     break;
                 case "5": //Por Teléfono
-                    Console.WriteLine("Por favor ingrese el numero telefonico del usuario a buscar...");
+                    Console.WriteLine("Por favor ingrese el numero telefónico del usuario a buscar...");
                     Console.Write("\n-- 👉: ");
                     valorDeBusqueda = Console.ReadLine();
                     criterioDeBusqueda = "numeroTelefonico";
@@ -103,7 +103,7 @@ class UsuariosRegistrados
             if (lector.HasRows)
             {
                 Menu.header();
-                Console.WriteLine($"\nNombre competo \t\t\tNumero de telefono \tGrupo Sanguineo y RH\n");
+                Console.WriteLine($"\nNombre completo \t\t\tNúmero de teléfono \tGrupo Sanguíneo y RH\n");
                 while (lector.Read())
                 {
                     Console.WriteLine($"{lector["nombres"]} {lector["apellidoPaterno"]} {lector["apellidoMaterno"]} \t {lector["numeroTelefonico"]}\t\t{lector["grupoSanguineo"]}{lector["rh"]} ");

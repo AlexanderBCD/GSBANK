@@ -69,7 +69,7 @@ class BajasUsuarios
                 if (lector.HasRows)
                 {
                     
-                    Console.WriteLine($"\nNombre completo \t\t\tNumero de telefono \tGrupo Sanguineo y RH\t Motivo de baja\n");
+                    Console.WriteLine($"\nNombre completo \t\t\tNumero de teléfono \tGrupo Sanguíneo y RH\t Motivo de baja\n");
                     while (lector.Read())
                     {
                         Console.WriteLine($"{lector["nombres"]} {lector["apellidoPaterno"]} {lector["apellidoMaterno"]} \t\t {lector["numeroTelefonico"]}\t\t{lector["grupoSanguineo"]}{lector["rh"]}\t\t{lector["motivo"]}");
