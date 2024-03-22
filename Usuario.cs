@@ -8,5 +8,6 @@ namespace GSBANK
         public string GrupoSanguineo { get; set; }
         public string Rh { get; set; }
         public string NumeroTelefonico { get; set; }
+        public string Direccion { get; set; }
     }
 }

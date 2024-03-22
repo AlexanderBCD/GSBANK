@@ -26,9 +26,9 @@ class Program
                 break;
 
                 case "2"://Registro de Nuevo Usuario
-                Usuario nuevoUsuario = RegistrarNuevoUsuario.ObtenerDatos();
-                UsuariosNuevos usuariosNuevos = new UsuariosNuevos(conexionBD);
-                usuariosNuevos.RegistrarNuevoUsuario(nuevoUsuario);
+                    Usuario nuevoUsuario = GestorUsuario.ObtenerDatosUsuario();
+                    UsuariosNuevos usuariosNuevos = new UsuariosNuevos(conexionBD);
+                    usuariosNuevos.RegistrarNuevoUsuario(nuevoUsuario);
                 break;
 
                 case "3"://Emparejamiento

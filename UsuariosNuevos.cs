@@ -1,4 +1,5 @@
 using Microsoft.Data.SqlClient;
+using System;
 
 namespace GSBANK
 {
@@ -13,8 +14,8 @@ namespace GSBANK
 
         public void RegistrarNuevoUsuario(Usuario usuario)
         {
-            string query = "INSERT INTO usuarios (nombres, apellidoPaterno, apellidoMaterno, grupoSanguineo, rh, numeroTelefonico) " +
-                           "VALUES (@nombres, @apellidoPaterno, @apellidoMaterno, @grupoSanguineo, @rh, @numeroTelefonico)";
+            string query = "INSERT INTO usuarios (nombres, apellidoPaterno, apellidoMaterno, grupoSanguineo, rh, numeroTelefonico, direccion) " +
+                           "VALUES (@nombres, @apellidoPaterno, @apellidoMaterno, @grupoSanguineo, @rh, @numeroTelefonico, @direccion)";
             using (SqlConnection connection = conexionBD.AbrirConexion())
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -25,11 +26,22 @@ namespace GSBANK
                     command.Parameters.AddWithValue("@grupoSanguineo", usuario.GrupoSanguineo);
                     command.Parameters.AddWithValue("@rh", usuario.Rh);
                     command.Parameters.AddWithValue("@numeroTelefonico", usuario.NumeroTelefonico);
+                    command.Parameters.AddWithValue("@direccion", usuario.Direccion);
 
                     try
                     {
                         command.ExecuteNonQuery();
                         Console.WriteLine("Usuario registrado exitosamente.");
+
+                        Console.WriteLine("¿Desea registrar otro usuario? (Sí/No)");
+                        string respuesta = Console.ReadLine()?.Trim().ToUpper() ?? "";
+                    if (respuesta == "SI" || respuesta == "SÍ")
+                        {
+                            Console.Clear();
+                            UsuariosNuevos usuariosNuevos = new UsuariosNuevos(new ConexionBD());
+                            Usuario nuevoUsuario = GestorUsuario.ObtenerDatosUsuario();
+                            usuariosNuevos.RegistrarNuevoUsuario(nuevoUsuario); 
+                        }
                     }
                     catch (Exception ex)
                     {
