@@ -7,6 +7,7 @@ namespace GSBANK
     {
         public static Usuario ObtenerDatosUsuario() 
         {
+            
             string nombre = "";
             string apellidoPaterno = "";
             string apellidoMaterno = "";
@@ -22,11 +23,11 @@ namespace GSBANK
                 Console.WriteLine("Nombres o Nombre:");
                 nombre = Console.ReadLine()?.Trim() ?? string.Empty;
 
-                if (nombre.Split(' ').Length >= 2)
+                if (nombre.Split(' ').Length >= 1)
                 {
                     break; 
                 }
-                Console.WriteLine("Por favor ingrese al menos dos nombres separados por un espacio.");
+                Console.WriteLine("Por favor ingrese al menos un nombre.");
             }
 
             while (true)
@@ -73,19 +74,17 @@ namespace GSBANK
                 Console.WriteLine("RH no válido. Inténtalo de nuevo.");
             }
 
-            while (true)
+           while (true)
             {
-                try
+                Console.WriteLine("Numero de telefono(10 digitos): ");
+                string telefonoInput = Console.ReadLine();
+                if (!string.IsNullOrEmpty(telefonoInput) && long.TryParse(telefonoInput, out long telefono))
                 {
-                    Console.WriteLine("Numero de telefono(10 digitos): ");
-                    numeroTelefonico = Console.ReadLine();
-                    long.Parse(numeroTelefonico); 
-                    break; 
+                    numeroTelefonico = telefonoInput;
+                    break;
                 }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Número de teléfono no válido. Inténtalo de nuevo.");
-                }
+                Console.WriteLine("Número de teléfono no válido. Inténtalo de nuevo.");
+                Console.ReadLine();
             }
 
             Console.WriteLine("Direccion: ");
@@ -102,6 +101,8 @@ namespace GSBANK
                 Direccion = direccion
             };
         }
+
+        
 
         private static bool EsNombreValido(string texto)
         {

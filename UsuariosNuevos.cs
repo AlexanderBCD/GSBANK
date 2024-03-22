@@ -18,36 +18,43 @@ namespace GSBANK
                            "VALUES (@nombres, @apellidoPaterno, @apellidoMaterno, @grupoSanguineo, @rh, @numeroTelefonico, @direccion)";
             using (SqlConnection connection = conexionBD.AbrirConexion())
             {
+                if (connection == null)
+                {
+                    Console.WriteLine("Error: No se pudo abrir la conexión a la base de datos.");
+                    return;
+                }
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@nombres", usuario.Nombres);
-                    command.Parameters.AddWithValue("@apellidoPaterno", usuario.ApellidoPaterno);
-                    command.Parameters.AddWithValue("@apellidoMaterno", usuario.ApellidoMaterno);
-                    command.Parameters.AddWithValue("@grupoSanguineo", usuario.GrupoSanguineo);
-                    command.Parameters.AddWithValue("@rh", usuario.Rh);
-                    command.Parameters.AddWithValue("@numeroTelefonico", usuario.NumeroTelefonico);
-                    command.Parameters.AddWithValue("@direccion", usuario.Direccion);
-
-                    try
                     {
-                        command.ExecuteNonQuery();
-                        Console.WriteLine("Usuario registrado exitosamente.");
+                        command.Parameters.AddWithValue("@nombres", usuario.Nombres);
+                        command.Parameters.AddWithValue("@apellidoPaterno", usuario.ApellidoPaterno);
+                        command.Parameters.AddWithValue("@apellidoMaterno", usuario.ApellidoMaterno);
+                        command.Parameters.AddWithValue("@grupoSanguineo", usuario.GrupoSanguineo);
+                        command.Parameters.AddWithValue("@rh", usuario.Rh);
+                        command.Parameters.AddWithValue("@numeroTelefonico", usuario.NumeroTelefonico);
+                        command.Parameters.AddWithValue("@direccion", usuario.Direccion);
 
-                        Console.WriteLine("¿Desea registrar otro usuario? (Sí/No)");
-                        string respuesta = Console.ReadLine()?.Trim().ToUpper() ?? "";
-                    if (respuesta == "SI" || respuesta == "SÍ")
+                        try
                         {
-                            Console.Clear();
-                            UsuariosNuevos usuariosNuevos = new UsuariosNuevos(new ConexionBD());
-                            Usuario nuevoUsuario = GestorUsuario.ObtenerDatosUsuario();
-                            usuariosNuevos.RegistrarNuevoUsuario(nuevoUsuario); 
+                            command.ExecuteNonQuery();
+                            Console.WriteLine("Usuario registrado exitosamente.");
+
+                            Console.WriteLine("¿Desea registrar otro usuario? (Sí/No)");
+                            string respuesta = Console.ReadLine()?.Trim().ToUpper() ?? "";
+                        if (respuesta == "SI" || respuesta == "SÍ")
+                            {
+                                Console.Clear();
+                                UsuariosNuevos usuariosNuevos = new UsuariosNuevos(new ConexionBD());
+                                Usuario nuevoUsuario = GestorUsuario.ObtenerDatosUsuario();
+                                usuariosNuevos.RegistrarNuevoUsuario(nuevoUsuario); 
+                            }
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"Error al registrar usuario: {ex.Message}");
-                    }
-                }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Error al registrar usuario: {ex.Message}");
+                        }
+                }    }
             }
         }
     }
