@@ -7,7 +7,7 @@ public class ConexionBD
 {
 
     //Conexion RafaPC [NO BORRAR]
-    private string connectionString = "Server=DESKTOP-0R5MCC8;Database=bancoDeSangre;Integrated Security=True;TrustServerCertificate=True;";
+    //private string connectionString = "Server=DESKTOP-0R5MCC8;Database=bancoDeSangre;Integrated Security=True;TrustServerCertificate=True;";
 
     //Conexion RafaLAP [NO BORRAR]
     //private string connectionString ="Server=DESKTOP-3EG8250;Database=bancoDeSangre;Integrated Security=True;";
@@ -16,7 +16,7 @@ public class ConexionBD
     //private string connectionString = "Server=LAPTOP-TQH24RE4;Database=bancoDeSangre;Integrated Security=True;Encrypt=False;";
 
     //Conxion Arturo [BORRALO]
-    //private string connectionString ="Server=LAPTOP-R2D2;Database=bancoDeSangre;Integrated Security=True;";
+    private string connectionString ="Server=LAPTOP-R2D2;Database=bancoDeSangre;Integrated Security=True;";
 
     public SqlConnection conexion;
 

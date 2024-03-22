@@ -7,6 +7,7 @@ class Program
     static void Main(string[] args)
     {
 
+        ConexionBD conexionBD = new ConexionBD();
         // Configurar la consola para usar UTF-8
         Console.InputEncoding = Encoding.UTF8;
         Console.OutputEncoding = Encoding.UTF8;
@@ -25,9 +26,9 @@ class Program
                 break;
 
                 case "2"://Registro de Nuevo Usuario
-                
-                    UsuariosNuev usuariosNuev = new UsuariosNuev();
-                    usuariosNuev.RegistrarNuevoUsuario("", "", "", "", "", "");
+                Usuario nuevoUsuario = RegistrarNuevoUsuario.ObtenerDatos();
+                UsuariosNuevos usuariosNuevos = new UsuariosNuevos(conexionBD);
+                usuariosNuevos.RegistrarNuevoUsuario(nuevoUsuario);
                 break;
 
                 case "3"://Emparejamiento

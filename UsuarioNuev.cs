@@ -1,35 +1,42 @@
-using System.Data.SqlClient;
 using Microsoft.Data.SqlClient;
 
 namespace GSBANK
 {
-    class UsuariosNuev
+    class UsuariosNuevos
     {
-        private string connectionString = "Server=LAPTOP-R2D2;Database=bancoDeSangre;Integrated Security=True;";
+        private ConexionBD conexionBD;
 
-        public void RegistrarNuevoUsuario(string nombres, string apellidoPaterno, string apellidoMaterno, string grupoSanguineo, string rh, string numeroTelefonico)
+        public UsuariosNuevos(ConexionBD conexionBD)
+        {
+            this.conexionBD = conexionBD;
+        }
+
+        public void RegistrarNuevoUsuario(Usuario usuario)
         {
             string query = "INSERT INTO usuarios (nombres, apellidoPaterno, apellidoMaterno, grupoSanguineo, rh, numeroTelefonico) " +
                            "VALUES (@nombres, @apellidoPaterno, @apellidoMaterno, @grupoSanguineo, @rh, @numeroTelefonico)";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = conexionBD.AbrirConexion())
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@nombres", nombres);
-                    command.Parameters.AddWithValue("@apellidoPaterno", apellidoPaterno);
-                    command.Parameters.AddWithValue("@apellidoMaterno", apellidoMaterno);
-                    command.Parameters.AddWithValue("@grupoSanguineo", grupoSanguineo);
-                    command.Parameters.AddWithValue("@rh", rh);
-                    command.Parameters.AddWithValue("@numeroTelefonico", numeroTelefonico);
+                    command.Parameters.AddWithValue("@nombres", usuario.Nombres);
+                    command.Parameters.AddWithValue("@apellidoPaterno", usuario.ApellidoPaterno);
+                    command.Parameters.AddWithValue("@apellidoMaterno", usuario.ApellidoMaterno);
+                    command.Parameters.AddWithValue("@grupoSanguineo", usuario.GrupoSanguineo);
+                    command.Parameters.AddWithValue("@rh", usuario.Rh);
+                    command.Parameters.AddWithValue("@numeroTelefonico", usuario.NumeroTelefonico);
 
-                    connection.Open();
-                    command.ExecuteNonQuery();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        Console.WriteLine("Usuario registrado exitosamente.");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error al registrar usuario: {ex.Message}");
+                    }
                 }
             }
-
-            Console.WriteLine("Usuario registrado exitosamente.");
         }
     }
 }
-

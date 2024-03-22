@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rafael X\\Downloads\\Repositorios\\GSBANK\\GSBANK.csproj": {}
+    "D:\\Users\\Arturo\\Desktop\\GSBANK\\GSBANK.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rafael X\\Downloads\\Repositorios\\GSBANK\\GSBANK.csproj": {
+    "D:\\Users\\Arturo\\Desktop\\GSBANK\\GSBANK.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rafael X\\Downloads\\Repositorios\\GSBANK\\GSBANK.csproj",
+        "projectUniqueName": "D:\\Users\\Arturo\\Desktop\\GSBANK\\GSBANK.csproj",
         "projectName": "GSBANK",
-        "projectPath": "C:\\Users\\Rafael X\\Downloads\\Repositorios\\GSBANK\\GSBANK.csproj",
-        "packagesPath": "C:\\Users\\Rafael X\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rafael X\\Downloads\\Repositorios\\GSBANK\\obj\\",
+        "projectPath": "D:\\Users\\Arturo\\Desktop\\GSBANK\\GSBANK.csproj",
+        "packagesPath": "C:\\Users\\Arturo\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\Arturo\\Desktop\\GSBANK\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Rafael X\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Arturo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -66,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
